@@ -1,17 +1,39 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, FlatList } from 'react-native';
+import { Card, ListItem } from 'react-native-elements';
+
+import { MENU } from '../shared/menu';
+import { baseUrl } from '../shared/baseUrl';
 
 class Menu extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            menu: MENU
+        }
+    }
+
     render(){
-        return(
-            <View>
-                <Text style={styles.title}>Menu</Text>
-                <Text style={styles.title}>Menu</Text>
-                <Text style={styles.title}>Menu</Text>
-                <Text style={styles.title}>Menu</Text>
-                <Text style={styles.title}>Menu</Text>
-            </View>
-        );
+
+        const renderMenu = ({item}) => {
+            return (
+                <Card title={item.name} image={{uri: item.image}}>
+                <ListItem
+                    subtitle={item.description}
+                />
+                </Card>
+            );
+        };
+    return(
+        <ScrollView>
+            <Text style={styles.title}>MENU</Text>
+            <FlatList
+                    data={this.state.menu}
+                    renderItem={renderMenu}
+                    keyExtractor={item => item.id.toString()}
+                    />
+        </ScrollView>
+    );
     }
 }
 
