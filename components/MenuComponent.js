@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, FlatList } from 'react-native';
-import { Card, ListItem } from 'react-native-elements';
+import { Card, ListItem, Image } from 'react-native-elements';
 
 import { MENU } from '../shared/menu';
 import { baseUrl } from '../shared/baseUrl';
@@ -18,6 +18,7 @@ class Menu extends Component{
         const renderMenu = ({item}) => {
             return (
                 <Card title={item.name} image={{uri: item.image}}>
+
                 <ListItem
                     subtitle={item.description}
                 />

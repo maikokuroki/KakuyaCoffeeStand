@@ -1,15 +1,27 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { TextInput, Button } from 'react-native-elements';
 
 class Login extends Component{
+    
+
+    login(){
+        const password = this.props.password;
+        if(password === 'SuperSecretPassword'){
+            console.log('Congrats!')
+        }
+        return console.log('fail')
+    }    
+
     render(){
         return(
             <View>
-                <Text style={styles.title}>Login</Text>
-                <Text style={styles.title}>Login</Text>
-                <Text style={styles.title}>Login</Text>
-                <Text style={styles.title}>Login</Text>
-                <Text style={styles.title}>Login</Text>
+                <TextInput 
+                placeholder='Password'
+                value={this.props.password}
+                
+                />
+                <Button onPress={() => this.login()}/>
             </View>
         );
     }
