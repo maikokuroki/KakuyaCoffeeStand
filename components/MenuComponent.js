@@ -17,7 +17,10 @@ class Menu extends Component{
 
         const renderMenu = ({item}) => {
             return (
-                <Card title={item.name} image={{uri: item.image}}>
+                <Card 
+                    title={item.name} 
+                    image={{uri: baseUrl + item.image}}
+                    imageStyle={{height: 300, styleMode: 'cover'}}>
 
                 <ListItem
                     subtitle={item.description}

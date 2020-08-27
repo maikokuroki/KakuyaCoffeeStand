@@ -12,7 +12,8 @@ import About from './AboutComponent';
 import Twitter from './TwitterComponent';
 import Event from './EventComponent';
 import Home from './HomeComponent';
-import AdminLogin from './AdminLoginComponent';
+import Login from './AdminLoginComponent';
+import News from './NewsComponent';
 
 const MainStack = createStackNavigator();
 
@@ -61,6 +62,15 @@ function EventStackScreen(){
     );
 }
 
+const LoginStack = createStackNavigator();
+function LoginStackScreen(){
+    return(
+        <LoginStack.Navigator>
+            <LoginStack.Screen name='Login' component={Login} />
+        </LoginStack.Navigator>
+    );
+}
+
 const Tab = createBottomTabNavigator();
 function TabNavigator(){
     return(
@@ -81,7 +91,9 @@ function MainNavigator(){
         <NavigationContainer>
             <Drawer.Navigator>
                 <Drawer.Screen name='Home' component={TabNavigator} />
-                <Drawer.Screen name='AdminLogin' component={AdminLogin} />
+                <Drawer.Screen name='AdminLogin' component={LoginStackScreen} />
+                <Drawer.Screen name='News' component={News} />
+
             </Drawer.Navigator>
        
         </NavigationContainer>

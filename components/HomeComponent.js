@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, Text, View, FlatList } from 'react-native';
-import { Tile, Card, ListItem } from 'react-native-elements';
+import { Tile, Card, ListItem, Image } from 'react-native-elements';
+import { connect } from 'react-redux';
+import { baseUrl } from '../shared/baseUrl';
 
-import { NEWS } from  '../shared/news';
+const mapStateToProps = state => {
+  return{
+    news: state.news
+  }
+}
 
 class Home extends Component{
-
-    constructor(props){
-        super(props);
-        this.state={
-          news: NEWS
-        }
-      }
 
     render(){
         return(
             <ScrollView>
-                <Text>Home</Text>
             <Tile
-              imageSrc={require('./images/kakuyalogo.jpeg')}
+              imageSrc={{uri: baseUrl + 'images/kakuyalogo.jpeg'}}
               featured
             />
-             <Card title="Today's News" image={{uri: this.state.news[0].image}}>
-            <ListItem subtitle={this.state.news[0].feed}/>
+             <Card 
+                title="Today's News" 
+                image={{uri: baseUrl + this.props.news[0].image}} 
+                imageStyle={{height: 300, styleMode: 'cover'}}>
+  
+            <ListItem subtitle={this.props.news[0].feed}/>
             </Card> 
               
           </ScrollView>
@@ -32,4 +34,4 @@ class Home extends Component{
 
 
 
-export default Home;
+export default connect(mapStateToProps)(Home);

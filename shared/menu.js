@@ -5,7 +5,7 @@ export const MENU = [
         nameJ:'焙煎コーヒー',
         description:'Hand dripped coffee. Beans varies by season.' ,
         descriptionJ:'直焙煎したコーヒーをハンドドリップにて提供します。',
-        image:'./components/images/Coffee.png'
+        image:'images/Coffee.png'
     },
     {
         id: 1,
@@ -13,7 +13,7 @@ export const MENU = [
         nameJ:'信号クリームソーダ',
         description:'Flavors: Melon soda, Strawberry soda, Lemon Sosa.' ,
         descriptionJ:'メロンソーダ、ストロベリーソーダ、レモンソーダの三種類をご用意。',
-        image:'./components/images/creamsoda.png' 
+        image:'images/creamsoda.png' 
     },
     {
         id: 2,
@@ -21,7 +21,7 @@ export const MENU = [
         nameJ:'ウィークエンドシトロン',
         description:'Hand crafted Citron. Only available on weekeend.' ,
         descriptionJ:'週末限定。いくちゃん手作りシトロン。数量限定。',
-        image:'./components/images/weekendcitron.png' 
+        image:'images/weekendcitron.png' 
     },
     {
         id: 3,
@@ -29,6 +29,6 @@ export const MENU = [
         nameJ:'スパイスカレー',
         description:'Authentic curry with bunch of spices with lemonglass on top.' ,
         descriptionJ:'厳選したスパイスを使用したカレー。仕上げにレモングラスをトッピング',
-        image:'./components/images/curry.png' 
+        image:'images/curry.png' 
     }
 ]

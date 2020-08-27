@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { TextInput, Button } from 'react-native-elements';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => {
+    return{
+      password: state.password
+    }
+  }
 
 class Login extends Component{
     
 
     login(){
-        const password = this.props.password;
-        if(password === 'SuperSecretPassword'){
+        if(password === this.props.password){
             console.log('Congrats!')
         }
         return console.log('fail')
@@ -36,4 +42,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Login;
+export default connect(mapStateToProps)(Login);

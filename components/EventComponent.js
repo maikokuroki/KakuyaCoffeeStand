@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Calendar } from 'react-native-calendars';
+  
 
 class Event extends Component{
     render(){
         return(
-            <View>
-                <Text style={styles.title}>Event</Text>
-                <Text style={styles.title}>Event</Text>
-                <Text style={styles.title}>Event</Text>
-                <Text style={styles.title}>Event</Text>
-                <Text style={styles.title}>Event</Text>
-                <Text style={styles.title}>Event</Text>
+            <View style={{ marginTop: 20 }}>
+                <Calendar />
             </View>
         );
     }

@@ -1,12 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Card, ListItem, Button } from 'react-native-elements';
+import { baseUrl } from '../shared/baseUrl';
+import MapView from 'react-native-maps';
 
 
 function About(){
     return(
         <View>
-            <Card title='ABOUT US'image={require('./images/entrance.png')}>
+            <Card 
+               title='ABOUT US'
+               image={{uri: baseUrl + 'images/entrance.png'}}
+               imageStyle={{height: 300, styleMode: 'cover'}}>
                 <Text style={{marginBottom: 10}}>
                      Kakuya Coffee Stand originally started as hand-pulling cart.
                 </Text>
