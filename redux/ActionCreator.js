@@ -10,3 +10,9 @@ export const addNews = (id, name, feed, image) => ({
         image: image
     }
 });
+
+export const fetchNewsfeed = () => dispatch => {
+    dispatch();
+
+    return fetch(baseUrl + 'news')
+};

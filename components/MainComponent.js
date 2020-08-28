@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { baseUrl } from '../shared/baseUrl';
 
 
 import Menu from './MenuComponent';
@@ -100,8 +101,12 @@ function MainNavigator(){
         <NavigationContainer>
             <Drawer.Navigator>
                 <Drawer.Screen name='Home' component={TabNavigator} />
-                <Drawer.Screen name='AdminLogin' component={LoginStackScreen} />
                 <Drawer.Screen name='News' component={NewsStackScreen} />
+                <Drawer.Screen name='Menu' component={MenuStackScreen} />
+                <Drawer.Screen name='About' component={AboutStackScreen} />
+                <Drawer.Screen name='Twitter' component={TwitterStackScreen} />
+                <Drawer.Screen name='Event' component={EventStackScreen} />
+                
 
             </Drawer.Navigator>
        
