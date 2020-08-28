@@ -18,18 +18,6 @@ const mapDispatchToProps = {
     addNews: (id, name, feed, image) => (addNews(id, name, feed, image))
 }
 
-function RenderNews({item}) {
-        return (
-            <View>
-            <Card image={{uri: baseUrl + item.image}}>
-
-            <ListItem
-                subtitle={item.feed}
-            />
-            </Card>
-            </View>
-        );
-}
 
 class News extends Component{
 
@@ -60,6 +48,25 @@ class News extends Component{
 
     render(){
 
+        const renderNews = ({item}) => {
+            return (
+                <View>
+                <Card 
+                    image={{uri: baseUrl + item.image}}
+                    title={item.date}
+                    imageStyle={{height: 300}}
+                >
+    
+                <ListItem
+                    title={item.feed}
+                    subtitle={item.name}
+                    
+                />
+                </Card>
+                </View>
+            );
+    }
+
         return(
             <ScrollView>
                 
@@ -71,10 +78,9 @@ class News extends Component{
                         
                     }}
                     />
-                <Text style={styles.title}>NEWS</Text>
                 <FlatList
                     data={this.props.news}
-                    renderItem={RenderNews}
+                    renderItem={renderNews}
                     keyExtractor={item => item.id.toString()}
                     />
 

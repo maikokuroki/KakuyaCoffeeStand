@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -20,7 +20,7 @@ const MainStack = createStackNavigator();
 const HomeStack = createStackNavigator();
 function HomeStackScreen(){
     return(
-        <HomeStack.Navigator>
+        <HomeStack.Navigator style={styles.navigation}>
             <HomeStack.Screen name='Home' component={Home} />
         </HomeStack.Navigator>
     );
@@ -71,6 +71,15 @@ function LoginStackScreen(){
     );
 }
 
+const NewsStack = createStackNavigator();
+function NewsStackScreen(){
+    return(
+        <NewsStack.Navigator>
+            <NewsStack.Screen name='News' component={News} />
+        </NewsStack.Navigator>
+    );
+}
+
 const Tab = createBottomTabNavigator();
 function TabNavigator(){
     return(
@@ -92,7 +101,7 @@ function MainNavigator(){
             <Drawer.Navigator>
                 <Drawer.Screen name='Home' component={TabNavigator} />
                 <Drawer.Screen name='AdminLogin' component={LoginStackScreen} />
-                <Drawer.Screen name='News' component={News} />
+                <Drawer.Screen name='News' component={NewsStackScreen} />
 
             </Drawer.Navigator>
        
@@ -105,6 +114,13 @@ function Main(){
         <MainNavigator />
     );
 }
+
+const styles = StyleSheet.create({
+    navigation: {
+        textAlign: "center",
+        fontSize: 20
+    }
+})
 
 export default Main;
     

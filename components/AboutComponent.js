@@ -11,7 +11,7 @@ function About(){
             <Card 
                title='ABOUT US'
                image={{uri: baseUrl + 'images/entrance.png'}}
-               imageStyle={{height: 300, styleMode: 'cover'}}>
+               imageStyle={{height: 300}}>
                 <Text style={{marginBottom: 10}}>
                      Kakuya Coffee Stand originally started as hand-pulling cart.
                 </Text>

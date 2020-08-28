@@ -20,7 +20,7 @@ class Menu extends Component{
                 <Card 
                     title={item.name} 
                     image={{uri: baseUrl + item.image}}
-                    imageStyle={{height: 300, styleMode: 'cover'}}>
+                    imageStyle={{height: 300}}>
 
                 <ListItem
                     subtitle={item.description}
@@ -30,7 +30,6 @@ class Menu extends Component{
         };
     return(
         <ScrollView>
-            <Text style={styles.title}>MENU</Text>
             <FlatList
                     data={this.state.menu}
                     renderItem={renderMenu}

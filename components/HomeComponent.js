@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, Text, View, FlatList } from 'react-native';
-import { Tile, Card, ListItem, Image } from 'react-native-elements';
+import { ScrollView } from 'react-native';
+import { Tile, Card, ListItem} from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
+
 
 const mapStateToProps = state => {
   return{
@@ -22,10 +23,11 @@ class Home extends Component{
              <Card 
                 title="Today's News" 
                 image={{uri: baseUrl + this.props.news[0].image}} 
-                imageStyle={{height: 300, styleMode: 'cover'}}>
+                imageStyle={{height: 300}}
+                >
   
             <ListItem subtitle={this.props.news[0].feed}/>
-            </Card> 
+            </Card>
               
           </ScrollView>
         );
